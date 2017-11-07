@@ -15,9 +15,9 @@
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
-[Oo]penssl
-[Ss]ocket.io
-[Cc]url-7.50.3
+[Oo]penssl/
+[Ss]ocket.io/
+[Cc]url-7.50.3/
 x64/
 x86/
 bld/
