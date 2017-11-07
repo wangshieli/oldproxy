@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E971C583-3B01-41CC-92AA-4D3CE6C29E10}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ProxyServer</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110_xp</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\work\ProxyServer\socket.io\boost_1_63_0;D:\work\ProxyServer\socket.io\rapidjson-master\include;D:\work\ProxyServer\socket.io\websocketpp-master;D:\work\ProxyServer\ProxyServer\zlib\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\work\ProxyServer\socket.io\boost_1_63_0\debug\lib;D:\work\ProxyServer\ProxyServer\zlib\lib;$(LibraryPath)</LibraryPath>
+    <TargetName>proxy-test</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>D:\work\ProxyServer\ProxyServer\zlib\include;D:\work\ProxyServer\socket.io\websocketpp-master;D:\work\ProxyServer\socket.io\rapidjson-master\include;D:\work\ProxyServer\socket.io\boost_1_63_0;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\work\ProxyServer\ProxyServer\zlib\lib;D:\work\ProxyServer\socket.io\boost_1_63_0\release\lib;$(LibraryPath)</LibraryPath>
+    <TargetName>proxy-v0.1.33</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;ZLIB_WINAPI;_CRT_SECURE_NO_WARNINGS;BUILDING_LIBCURL;SIO_TLS
+;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\work\ProxyServer\curl-7.50.3\include;D:\work\ProxyServer\openssl\inc32;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>-D_SCL_SECURE_NO_WARNINGS %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>zlibstat.lib;Shlwapi.lib;wldap32.lib;boost.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;BUILDING_LIBCURL;ZLIB_WINAPI;SIO_TLS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalIncludeDirectories>D:\work\ProxyServer\openssl\inc32;D:\work\ProxyServer\curl-7.50.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>zlibstat.lib;Shlwapi.lib;wldap32.lib;boost.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="aes.cpp" />
+    <ClCompile Include="base64.cpp" />
+    <ClCompile Include="cjson.c" />
+    <ClCompile Include="md5.cpp" />
+    <ClCompile Include="np_2_work_thread.cpp" />
+    <ClCompile Include="np_5001And6086_thread.cpp" />
+    <ClCompile Include="np_5001_thread.cpp" />
+    <ClCompile Include="np_6086_thread.cpp" />
+    <ClCompile Include="np_DNS.cpp" />
+    <ClCompile Include="np_download_thread.cpp" />
+    <ClCompile Include="np_golbal_function.cpp" />
+    <ClCompile Include="np_heartbeat_timer.cpp" />
+    <ClCompile Include="np_helper_function.cpp" />
+    <ClCompile Include="np_InstallChrome.cpp" />
+    <ClCompile Include="np_main_thread.cpp" />
+    <ClCompile Include="np_message_thread.cpp" />
+    <ClCompile Include="np_ontimer_function.cpp" />
+    <ClCompile Include="np_ontimer_thread.cpp" />
+    <ClCompile Include="np_redial_thread.cpp" />
+    <ClCompile Include="np_reportinformation_thread.cpp" />
+    <ClCompile Include="np_schtasks.cpp" />
+    <ClCompile Include="np_tool_function.cpp" />
+    <ClCompile Include="np_usernamea_password.cpp" />
+    <ClCompile Include="np_ward.cpp" />
+    <ClCompile Include="np_whitelist.cpp" />
+    <ClCompile Include="np_worker_thread.cpp" />
+    <ClCompile Include="sockio\internal\sio_client_impl.cpp" />
+    <ClCompile Include="sockio\internal\sio_packet.cpp" />
+    <ClCompile Include="sockio\NewIoClient.cpp" />
+    <ClCompile Include="sockio\sio_client.cpp" />
+    <ClCompile Include="sockio\sio_socket.cpp" />
+    <ClCompile Include="TraceLog.cpp" />
+    <ClCompile Include="zlib\dounzip.cpp" />
+    <ClCompile Include="zlib\ioapi.c" />
+    <ClCompile Include="zlib\iowin32.c" />
+    <ClCompile Include="zlib\unzip.c" />
+    <ClCompile Include="zlib\zip_util.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="aes.h" />
+    <ClInclude Include="base64.h" />
+    <ClInclude Include="cJSON.h" />
+    <ClInclude Include="dounzip.h" />
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="np_2_work_thread.h" />
+    <ClInclude Include="np_5001And6086_thread.h" />
+    <ClInclude Include="np_5001_thread.h" />
+    <ClInclude Include="np_6086_thread.h" />
+    <ClInclude Include="np_DNS.h" />
+    <ClInclude Include="np_download_thread.h" />
+    <ClInclude Include="np_golbal_header.h" />
+    <ClInclude Include="np_heartbeat_timer.h" />
+    <ClInclude Include="np_helper_function.h" />
+    <ClInclude Include="np_message_thread.h" />
+    <ClInclude Include="np_ontimer_function.h" />
+    <ClInclude Include="np_ontimer_thread.h" />
+    <ClInclude Include="np_redial_thread.h" />
+    <ClInclude Include="np_reportinformation_thread.h" />
+    <ClInclude Include="np_schtasks.h" />
+    <ClInclude Include="np_tool_function.h" />
+    <ClInclude Include="np_usernamea_password.h" />
+    <ClInclude Include="np_ward.h" />
+    <ClInclude Include="np_worker_thread.h" />
+    <ClInclude Include="sockio\internal\sio_client_impl.h" />
+    <ClInclude Include="sockio\internal\sio_packet.h" />
+    <ClInclude Include="sockio\sio_client.h" />
+    <ClInclude Include="sockio\sio_message.h" />
+    <ClInclude Include="sockio\sio_socket.h" />
+    <ClInclude Include="zlib\ioapi.h" />
+    <ClInclude Include="zlib\iowin32.h" />
+    <ClInclude Include="zlib\unzip.h" />
+    <ClInclude Include="zlib\wrap_object.h" />
+    <ClInclude Include="zlib\zip_util.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
